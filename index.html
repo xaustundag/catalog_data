@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        #category-buttons, #catalog {
+            margin-top: 20px;
+        }
+        .category-button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .category-button:hover {
+            background-color: #0056b3;
+        }
+        .brand {
+            padding: 10px 0;
+        }
+        .brand a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .brand a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Catalog</h1>
+    <form id="editForm">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" required>
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Edit Catalog</button>
+    </form>
+    <pre id="response"></pre>
+
+    <script>
+        document.getElementById('editForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const category = document.getElementById('category').value;
+            const brand = document.getElementById('brand').value;
+            const url = document.getElementById('url').value;
+
+            const data = { category, brand, url };
+
+            fetch('https://<your-site-name>.netlify.app/.netlify/functions/editCatalog', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                console.log('Response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                document.getElementById('response').textContent = 'Error: ' + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
