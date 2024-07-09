@@ -42,13 +42,22 @@
 <body>
     <h1>Edit Catalog</h1>
     <form id="editForm">
+        <label for="action">Action:</label>
+        <select id="action" name="action" required>
+            <option value="add">Add</option>
+            <option value="delete">Delete</option>
+        </select>
+        <br>
         <label for="category">Category:</label>
         <input type="text" id="category" name="category" required>
+        <br>
         <label for="brand">Brand:</label>
         <input type="text" id="brand" name="brand" required>
+        <br>
         <label for="url">URL:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Edit Catalog</button>
+        <input type="text" id="url" name="url">
+        <br>
+        <button type="submit">Submit</button>
     </form>
     <pre id="response"></pre>
 
@@ -56,11 +65,12 @@
         document.getElementById('editForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
+            const action = document.getElementById('action').value;
             const category = document.getElementById('category').value;
             const brand = document.getElementById('brand').value;
             const url = document.getElementById('url').value;
 
-            const data = { category, brand, url };
+            const data = { action, category, brand, url };
 
             fetch('https://<your-site-name>.netlify.app/.netlify/functions/editCatalog', {
                 method: 'POST',
