@@ -90,7 +90,7 @@
             const data = { action, category, brand, url };
 
             try {
-                const response = await fetch('https://wonderful-maamoul-33d63c.netlify.app/.netlify/functions/editCatalog', {
+                const response = await fetch('https://wonderful-maamoul-33d63c.netlify.app/.netlify/functions/update_json', {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: { 'Content-Type': 'application/json' }
