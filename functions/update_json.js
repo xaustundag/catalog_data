@@ -1,6 +1,6 @@
-const { Octokit } = require("@octokit/rest");
-const axios = require("axios");
-require('dotenv').config();
+const { Octokit } = await import("@octokit/rest");
+const axios = await import("axios");
+await import('dotenv').config();
 
 const NETLIFY_SITE_ID = process.env.NETLIFY_SITE_ID;
 const NETLIFY_ACCESS_TOKEN = process.env.NETLIFY_ACCESS_TOKEN;
