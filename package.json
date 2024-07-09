@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@octokit/rest": "^21.0.0"
+    "@octokit/rest": "^21.0.0",
+    "axios": "^1.7.2"
   }
 }
