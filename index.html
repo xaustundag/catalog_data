@@ -11,31 +11,47 @@
             color: #333;
             margin: 0;
             padding: 20px;
+            line-height: 1.6;
         }
-        #category-buttons, #catalog {
-            margin-top: 20px;
+        h1 {
+            color: #007bff;
         }
-        .category-button {
-            padding: 10px 15px;
-            margin: 5px;
-            border: none;
+        #editForm {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
             background-color: #007bff;
             color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
             cursor: pointer;
-            border-radius: 5px;
         }
-        .category-button:hover {
+        button:hover {
             background-color: #0056b3;
         }
-        .brand {
-            padding: 10px 0;
-        }
-        .brand a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .brand a:hover {
-            text-decoration: underline;
+        #response {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
     </style>
 </head>
@@ -47,22 +63,23 @@
             <option value="add">Add</option>
             <option value="delete">Delete</option>
         </select>
-        <br>
+
         <label for="category">Category:</label>
         <input type="text" id="category" name="category" required>
-        <br>
+
         <label for="brand">Brand:</label>
         <input type="text" id="brand" name="brand" required>
-        <br>
-        <label for="url">URL:</label>
+
+        <label for="url">URL (for add only):</label>
         <input type="text" id="url" name="url">
-        <br>
+
         <button type="submit">Submit</button>
     </form>
+
     <pre id="response"></pre>
 
     <script>
-        document.getElementById('editForm').addEventListener('submit', function(event) {
+        document.getElementById('editForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const action = document.getElementById('action').value;
@@ -70,28 +87,44 @@
             const brand = document.getElementById('brand').value;
             const url = document.getElementById('url').value;
 
-            const data = { action, category, brand, url };
+            const data = { action, category, brand };
+            if (action === 'add') {
+                data.url = url;
+            }
 
-            fetch('https://wonderful-maamoul-33d63c.netlify.app/.netlify/functions/editCatalog', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => {
-                console.log('Response:', response);
-                return response.json();
-            })
-            .then(data => {
-                console.log('Success:', data);
-                document.getElementById('response').textContent = JSON.stringify(data, null, 2);
-            })
-            .catch((error) => {
+            try {
+                const response = await fetch('/.netlify/functions/updateCatalog', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    document.getElementById('response').textContent = JSON.stringify(result, null, 2);
+                    alert(result.message);
+                } else {
+                    document.getElementById('response').textContent = `Error: ${result.error}`;
+                    alert(`Error: ${result.error}`);
+                }
+            } catch (error) {
                 console.error('Error:', error);
-                document.getElementById('response').textContent = 'Error: ' + error.message;
-            });
+                document.getElementById('response').textContent = `Error: ${error.message}`;
+                alert(`Error: ${error.message}`);
+            }
         });
+
+        // Show/hide URL input based on action
+        document.getElementById('action').addEventListener('change', function() {
+            const urlInput = document.getElementById('url');
+            urlInput.style.display = this.value === 'add' ? 'block' : 'none';
+            urlInput.required = this.value === 'add';
+        });
+
+        // Trigger change event to set initial state
+        document.getElementById('action').dispatchEvent(new Event('change'));
     </script>
 </body>
 </html>
