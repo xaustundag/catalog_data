@@ -83,7 +83,7 @@
     "casual_dresses": {
         "airport": "https://t.me/+EiOUTEJGlXJkZTVk",
         "Berrin": "https://t.me/+ZOxJMF2i96RkNjE0",
-"bluebelle" : "https://t.me/+m4urN9EGYI04ZmVk" ,
+        "bluebelle": "https://t.me/+m4urN9EGYI04ZmVk",
         "bonita": "https://t.me/+IgeUxFamx3hjNjI0",
         "dimare": "https://t.me/+QOGkJ9y-I59jY2Fk",
         "gocce_mia": "https://t.me/+qNVhpLMP5uxjNmY0",
@@ -92,19 +92,17 @@
         "echo": "https://t.me/+vFKs6xmvx0w3YTA0",
         "erse_breeze": "https://t.me/+FLw34z8MSSw0Y2Rk",
         "imza_istanbul": "https://t.me/+pQIoJsQqPNxhNGU0",
-"lilarose" : "https://t.me/+e66R1uKXpT9mYzQ8" ,
+        "lilarose": "https://t.me/+e66R1uKXpT9mYzQ8",
         "explosion": "https://t.me/+NgvvIkdI3xJlYTU8",
         "niqozza": "https://t.me/+ldlByhmqNeFmMjI0",
         "my_styl": "https://t.me/+fKigO4PUbL4yZGU0",
-"mascioni" : "https://t.me/+welw3ojWtXkzNzU0" ,
-"merkür" : "https://t.me/+CPXmsS-xNT5lNzQ0" ,
+        "mascioni": "https://t.me/+welw3ojWtXkzNzU0",
+        "merkür": "https://t.me/+CPXmsS-xNT5lNzQ0",
         "hukka": "https://t.me/+3vrdXG5OtYk4OTQ0",
         "ozqueen": "https://t.me/+bXbMNdJHgyg0ZmJk",
         "qimene": "https://t.me/+HV2yDkRPBSliYmNk",
         "roseto": "https://t.me/+GXPIE5hj2nMwMjBk",
-        "wmnels": "https://t.me/+I_7ZvwUUd5oxZjk0"
-    },
-    "wardrobe": {
+        "wmnels": "https://t.me/+I_7ZvwUUd5oxZjk0" ,
         "ayda": "https://t.me/+GAjlygjv13E2MTQ0",
         "aversia": "https://t.me/+E_zar4df7J82NDJk",
         "barones": "https://t.me/+azQGuqiRcQplYzY0",
@@ -148,6 +146,9 @@
         "reaction_exclusive": "https://t.me/+aI0HaH8sG6RhNWFk",
         "rui_confezione": "https://t.me/+u0LNdGoJtJRkMmE8",
         "yz_archives": "https://t.me/+pWC5-zFwNAxhNDA0"
+    },
+    "wardrobe": {
+
     },
     "mens_suits": {
         "adimo_cerimonia": "https://t.me/+VmVKmGxTdzJlNWM0",
