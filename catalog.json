@@ -22,12 +22,8 @@
         "white_house": "https://t.me/+mnPUglgf5Nc2MTg0"
     },
     "special_occasion": {
-        "yayla_abiye": "https://t.me/+0ZvU-qs-MFljYjJk",
         "hallmark": "https://t.me/+HPkmdn34fD8zZmE0",
-        "san_fiore": "https://t.me/+CgvyV79bDRtiNmM8",
         "aura_atelier": "https://t.me/+GfdKddT8Aj9lMTBk",
-        "vier": "https://t.me/+sl34dFhlvB5hZjVk",
-        "viva_dor": "https://t.me/+_wRXtGDNO9UxZmY0",
         "alchera": "https://t.me/+2jIyveO63HkwMWY8",
         "alince": "https://t.me/+9Qw8WRixOKM5NjQ0",
         "alin_exclusive": "https://t.me/+qZx-HQKmp7thNGM0",
@@ -67,6 +63,7 @@
         "promlace": "https://t.me/+_zPfkHtONoVlYWE0",
         "ramonna_life": "https://t.me/+Ase8pwb5FAY1YTZk",
         "rengin": "https://t.me/+tkMgkTRVECxhMmE8",
+"san_fiore": "https://t.me/+CgvyV79bDRtiNmM8",
         "serabella": "https://t.me/+ObjGzekbDaw4MTU0",
         "see_line": "https://t.me/+CgKbLIJ10xY5NGJk",
         "seref_vural": "https://t.me/+qCQbsZ0i83EwMTc0",
@@ -78,6 +75,9 @@
         "stn_bulava": "https://t.me/+3-4gtMbRnE01NGJk",
         "tiah": "https://t.me/+Zxumm6FKURRjNDQ0",
         "tiara": "https://t.me/+kucGT2PO_i82NTVk",
+"vier": "https://t.me/+sl34dFhlvB5hZjVk",
+"viva_dor": "https://t.me/+_wRXtGDNO9UxZmY0",
+"yayla_abiye": "https://t.me/+0ZvU-qs-MFljYjJk",
         "zaffiro": "https://t.me/+-5aG_VtxQr9mNjJk"
     },
     "mens_suits": {
@@ -85,7 +85,8 @@
         "masculini": "https://t.me/+2yrkdskARjI0YjU0"
     },
     "casual_dresses": {
-        "tig_triko": "https://t.me/+Vh1JMpA5cGgxNzU0",
+"BARONES": "https://t.me/+iRUuBG5x3EMzOTJk" ,        
+"tig_triko": "https://t.me/+Vh1JMpA5cGgxNzU0",
         "hey_triko": "https://t.me/+3tN5bGnUmg8wNmI0",
         "airport": "https://t.me/+EiOUTEJGlXJkZTVk",
         "ayda": "https://t.me/+GAjlygjv13E2MTQ0",
@@ -206,7 +207,7 @@
         "gaspara_bridal_shoes": "https://t.me/+a0mn7KunjOo1YzQ0"
     },
     "SEASONS": {
-        "Autumn-WİNTER 2024": "https://t.me/+WNuCCLQ5F641MzQ0" , 
-"Editors_choise": "https://t.me/+4PjaGRhYUY5mMGQ0" 
+        "Autumn-WİNTER 2024": "https://t.me/+WNuCCLQ5F641MzQ0",
+        "Editors_choise": "https://t.me/+4PjaGRhYUY5mMGQ0"
     }
 }
